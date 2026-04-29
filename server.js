@@ -227,7 +227,7 @@ app.get("/stores", (req, res) => {
   );
 
   // Tier 1 — country view
-  if (z <= 7) {
+  if (z <= 6) {
     const data = getStateData(ne_lat, ne_lng, sw_lat, sw_lng);
     console.log(`  [Tier 1] → ${data.length} states`);
     return res.json({ type: "state", data });
@@ -239,7 +239,7 @@ app.get("/stores", (req, res) => {
   );
 
   // Tier 2 — regional clusters
-  if (z <= 12) {
+  if (z <= 11) {
     const data = getClusters(filtered, z);
     console.log(
       `  [Tier 2] → ${filtered.length} stores → ${data.length} clusters`,
